@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const squares = document.querySelectorAll("#board > div");
-    const statusDiv = document.getElementById("status");
+    const status = document.getElementById("status");
 
     const gameState = Array(9).fill(null)
     let currentPlayer = "X";
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ) {
           return gameState[a];
       }
+    }
       return null;
     }
 
@@ -42,8 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
       
         const winner = checkWinner();
         if (winner) {
-          statusDiv.textContent = "Congratulations! " + winner + " is the Winner!";
-          statusDiv.classList.add("you-won");
+          status.textContent = "Congratulations! " + winner + " is the Winner!";
+          status.classList.add("you-won");
           gameOver = true;
           return;
         }
@@ -53,4 +54,5 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+
 
